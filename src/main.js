@@ -1,3 +1,9 @@
+/*
+ * @Author: zhang_gen_yuan
+ * @Date: 2021-05-12 20:26:05
+ * @LastEditTime: 2021-05-12 22:15:14
+ * @Descripttion: 
+ */
 import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
@@ -15,18 +21,12 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-/**
- * If you don't want to use mock-server
- * you want to use MockJs for mock api
- * you can execute: mockXHR()
- *
- * Currently MockJs will be used in the production environment,
- * please remove it before going online ! ! !
- */
 if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
+import btnStyle from './mixins/btn.js'
+Vue.mixin(btnStyle)
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })

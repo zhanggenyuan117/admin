@@ -3,7 +3,9 @@
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb class="breadcrumb-container" />
-
+    <div class="theme">
+      <i class="el-icon-delete"></i>
+    </div>
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -66,6 +68,11 @@ export default {
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  .theme{
+    position: absolute;
+    right: 100px;
+    line-height: 50px;
+  }
 
   .hamburger-container {
     line-height: 46px;
